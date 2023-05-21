@@ -1,0 +1,57 @@
+@baseUrl = "http://localhost:3333"
+@token = "Bearer "
+
+# Auth
+
+### Register
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "code": 
+}
+
+# Memories
+
+### List
+GET {{baseUrl}}/memories
+Content-Type: application/json
+Authorization: {{token}}
+
+### Retrieve
+GET {{baseUrl}}/memories/1
+Content-Type: application/json
+Authorization: {{token}}
+
+### Create
+POST {{baseUrl}}/memories
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "test",
+  "content": "test"
+}
+
+### Update
+PUT {{baseUrl}}/memories/1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "test",
+  "content": "test"
+}
+
+### Destroy
+DELETE {{baseUrl}}/memories/1
+Content-Type: application/json
+Authorization: {{token}}
+
+
+# Upload
+
+### Upload File
+POST {{baseUrl}}/upload
+Content-Type: multipart/form-data
+Authorization: {{token}}
